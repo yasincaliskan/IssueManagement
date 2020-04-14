@@ -1,8 +1,7 @@
 package com.yasincaliskan.issuemanagement.service;
 
 import com.yasincaliskan.issuemanagement.dto.IssueDto;
-import com.yasincaliskan.issuemanagement.entity.Issue;
-import org.springframework.data.domain.Page;
+import com.yasincaliskan.issuemanagement.util.TPage;
 import org.springframework.data.domain.Pageable;
 
 public interface IssueService {
@@ -10,7 +9,9 @@ public interface IssueService {
     IssueDto save(IssueDto issue);
     IssueDto getById(Long id);
 
-    Page<IssueDto> getAllPageable(Pageable pageable);
+    TPage<IssueDto> getAllPageable(Pageable pageable);
 
-    Boolean delete(IssueDto issue);
+    Boolean delete(Long id);
+
+    IssueDto update(Long id, IssueDto project);
 }
